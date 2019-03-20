@@ -11,6 +11,7 @@ class Home extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Početna'),
+        centerTitle: true 
       ),
       body: ListView(
         padding: const EdgeInsets.symmetric(vertical: 20.00, horizontal: 0.00),

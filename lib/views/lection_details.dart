@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../components/horizontalScroll.dart';
 import '../components/bottomNav.dart';
+import './player.dart';
 
 class LectionDetails extends StatelessWidget {
   @override
@@ -8,6 +9,7 @@ class LectionDetails extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: Text("Mix dana #2"),
+          centerTitle: true 
         ),
         body: ListView(
           padding:
@@ -45,7 +47,13 @@ class LectionDetails extends StatelessWidget {
             child:Text('Lekcije',
                 style: TextStyle(fontSize: 17.00, fontWeight: FontWeight.bold))
             ),
-            Padding(
+            GestureDetector(
+            onTap: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Player()));
+                },
+                child:Padding(
               padding:const EdgeInsets.symmetric(vertical: 20.00, horizontal: 0.00),
               child:Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -65,7 +73,7 @@ class LectionDetails extends StatelessWidget {
                 
               Icon(Icons.more_vert)
               ] ,
-            ))
+            )))
           ],
         ),
         bottomNavigationBar: BottomNavigation(),
